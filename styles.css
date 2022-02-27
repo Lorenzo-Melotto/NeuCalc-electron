@@ -1,0 +1,70 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+body {
+  background: #363636;
+  color: #fff;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin-top: 20px;
+  border: solid 0px;
+  box-shadow: 10px 10px 20px #292929, -10px -10px 20px #3d3d3d;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.neomorphism {
+  border: solid 0px;
+  box-shadow: 10px 10px 20px #292929, -10px -10px 20px #3d3d3d;
+  border-radius: 20px;
+}
+
+table {
+  margin-top: 30px;
+}
+
+input {
+  width: 280px;
+  height: 40px;
+  margin: 10px 5px;
+  font-size: 38px;
+  text-align: right;
+}
+
+.box {
+  margin: 10px 5px;
+  padding: 20px;
+  border: solid 0px;
+  box-shadow: 5px 5px 10px #292929, -5px -5px 10px #3d3d3d;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.orange {
+  background: linear-gradient(145deg, #f3a65e, #f28c2a);
+}
+
+.box:hover {
+  background: #4b4b4b;
+}
+
+.box:active {
+  border: solid 0px;
+  box-shadow: 5px 5px 10px #3d3d3d, -5px -5px 10px #292929;
+  border-radius: 20px;
+}
+
+.box.orange:hover {
+  background: #f3a65e;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+    <title>NeuCalc</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <table>
+          <tr>
+            <td colspan="4">
+              <input type="text" name="result" id="result" value="0" disabled />
+            </td>
+          </tr>
+          <tr>
+            <td id="clear"><div class="box">C</div></td>
+            <td id="delete"><div class="box">&LeftArrow;</div></td>
+            <td id="modulo"><div class="box">%</div></td>
+            <td id="slash"><div class="box orange">&div;</div></td>
+          </tr>
+          <tr>
+            <td id="seven"><div class="box">7</div></td>
+            <td id="eight"><div class="box">8</div></td>
+            <td id="nine"><div class="box">9</div></td>
+            <td id="by"><div class="box orange">X</div></td>
+          </tr>
+          <tr>
+            <td id="four"><div class="box">4</div></td>
+            <td id="five"><div class="box">5</div></td>
+            <td id="six"><div class="box">6</div></td>
+            <td id="minus"><div class="box orange">&minus;</div></td>
+          </tr>
+          <tr>
+            <td id="one"><div class="box">1</div></td>
+            <td id="two"><div class="box">2</div></td>
+            <td id="three"><div class="box">3</div></td>
+            <td id="plus"><div class="box orange">&plus;</div></td>
+          </tr>
+          <tr>
+            <td colspan="2" id="zero"><div class="box">0</div></td>
+            <td id="dot"><div class="box">.</div></td>
+            <td id="equal"><div class="box orange">=</div></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>
