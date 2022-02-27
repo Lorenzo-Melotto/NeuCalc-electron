@@ -73,7 +73,6 @@ const calcResult = () => {
 };
 
 /* add a click event to all the buttons */
-
 equal.addEventListener("click", () => {
   calcResult();
 });
@@ -199,4 +198,68 @@ del.addEventListener("click", () => {
   let currScreen = screen.value;
   let newScreen = currScreen.slice(0, currScreen.length - 1);
   screen.value = newScreen;
+});
+
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+  switch (key) {
+    case "1":
+      one.dispatchEvent(new Event("click"));
+      break;
+    case "2":
+      two.dispatchEvent(new Event("click"));
+      break;
+    case "3":
+      three.dispatchEvent(new Event("click"));
+      break;
+    case "4":
+      four.dispatchEvent(new Event("click"));
+      break;
+    case "5":
+      five.dispatchEvent(new Event("click"));
+      break;
+    case "6":
+      six.dispatchEvent(new Event("click"));
+      break;
+    case "7":
+      seven.dispatchEvent(new Event("click"));
+      break;
+    case "8":
+      eight.dispatchEvent(new Event("click"));
+      break;
+    case "9":
+      nine.dispatchEvent(new Event("click"));
+      break;
+    case "0":
+      zero.dispatchEvent(new Event("click"));
+      break;
+    case "+":
+      plus.dispatchEvent(new Event("click"));
+      break;
+    case "-":
+      minus.dispatchEvent(new Event("click"));
+      break;
+    case "*":
+      by.dispatchEvent(new Event("click"));
+      break;
+    case "/":
+      slash.dispatchEvent(new Event("click"));
+      break;
+    case "%":
+      modulo.dispatchEvent(new Event("click"));
+      break;
+    case ".":
+      dot.dispatchEvent(new Event("click"));
+      break;
+    case "Backspace":
+      del.dispatchEvent(new Event("click"));
+      break;
+    case "Delete":
+      clear.dispatchEvent(new Event("click"));
+      break;
+    case "Enter":
+    case "=":
+      equal.dispatchEvent(new Event("click"));
+      break;
+  }
 });
