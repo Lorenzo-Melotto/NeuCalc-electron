@@ -2,7 +2,7 @@
 
 ## **Now an electron app!**
 
-A simple calculator built with electron that has a neumorphism style to it.
+A simple calculator built with electron that has a neumorphism style to it. Check out the version written in vanilla javascript [here](https://github.com/Lorenzo-Melotto/NeuCalc).
 
 ## Getting started
 
@@ -24,7 +24,7 @@ Run the project
 $ npm run
 ```
 
-Build the project
+Or build the project for the OS you want
 
 - MacOS
   ```shell
@@ -38,7 +38,8 @@ Build the project
   ```shell
   $ npm run package-linux
   ```
-  The packages will be placed inside the `build` folder in the root directory.
+
+The packages will be placed inside the `build` folder in the root directory.
 
 Enjoy!
 
