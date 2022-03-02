@@ -23,7 +23,7 @@ const zero = document.querySelector("#zero");
 const equal = document.querySelector("#equal");
 const slash = document.querySelector("#slash");
 const by = document.querySelector("#by");
-const modulo = document.querySelector("#modulo");
+const power = document.querySelector("#power");
 const del = document.querySelector("#delete");
 const screen = document.querySelector("#result");
 
@@ -62,8 +62,9 @@ const calcResult = () => {
       }
       acc = storedNumber / lastNum;
       break;
-    case "%":
-      acc = storedNumber % lastNum;
+    case "^":
+      // acc = storedNumber % lastNum;
+      acc = storedNumber ** lastNum;
       break;
   }
 
@@ -135,7 +136,8 @@ zero.addEventListener("click", () => {
 });
 
 dot.addEventListener("click", () => {
-  if (screen.value === "") screen.value = "0.";
+  if (screen.value.includes(".")) return;
+  if (screen.value === "" || screen.value === "0.") screen.value = "0.";
   else screen.value += ".";
 });
 
@@ -183,13 +185,13 @@ slash.addEventListener("click", () => {
   isFirstOp = 0;
 });
 
-modulo.addEventListener("click", () => {
+power.addEventListener("click", () => {
   if (isFirstOp === 1) {
     storedNumber = parseFloat(screen.value);
   } else {
     calcResult();
   }
-  lastOp = "%";
+  lastOp = "^";
   screen.value = "";
   isFirstOp = 0;
 });
@@ -198,68 +200,71 @@ del.addEventListener("click", () => {
   let currScreen = screen.value;
   let newScreen = currScreen.slice(0, currScreen.length - 1);
   screen.value = newScreen;
+  acc = parseFloat(screen.value);
 });
 
 document.addEventListener("keydown", (event) => {
   const key = event.key;
+  let clickEvent = new Event("click");
   switch (key) {
     case "1":
-      one.dispatchEvent(new Event("click"));
+      one.dispatchEvent(clickEvent);
       break;
     case "2":
-      two.dispatchEvent(new Event("click"));
+      two.dispatchEvent(clickEvent);
       break;
     case "3":
-      three.dispatchEvent(new Event("click"));
+      three.dispatchEvent(clickEvent);
       break;
     case "4":
-      four.dispatchEvent(new Event("click"));
+      four.dispatchEvent(clickEvent);
       break;
     case "5":
-      five.dispatchEvent(new Event("click"));
+      five.dispatchEvent(clickEvent);
       break;
     case "6":
-      six.dispatchEvent(new Event("click"));
+      six.dispatchEvent(clickEvent);
       break;
     case "7":
-      seven.dispatchEvent(new Event("click"));
+      seven.dispatchEvent(clickEvent);
       break;
     case "8":
-      eight.dispatchEvent(new Event("click"));
+      eight.dispatchEvent(clickEvent);
       break;
     case "9":
-      nine.dispatchEvent(new Event("click"));
+      nine.dispatchEvent(clickEvent);
       break;
     case "0":
-      zero.dispatchEvent(new Event("click"));
+      zero.dispatchEvent(clickEvent);
       break;
     case "+":
-      plus.dispatchEvent(new Event("click"));
+      plus.dispatchEvent(clickEvent);
       break;
     case "-":
-      minus.dispatchEvent(new Event("click"));
+      minus.dispatchEvent(clickEvent);
       break;
     case "*":
-      by.dispatchEvent(new Event("click"));
+      by.dispatchEvent(clickEvent);
       break;
     case "/":
-      slash.dispatchEvent(new Event("click"));
+      slash.dispatchEvent(clickEvent);
       break;
-    case "%":
-      modulo.dispatchEvent(new Event("click"));
+    case "^":
+      power.dispatchEvent(clickEvent);
       break;
     case ".":
-      dot.dispatchEvent(new Event("click"));
+      dot.dispatchEvent(clickEvent);
       break;
     case "Backspace":
-      del.dispatchEvent(new Event("click"));
+      del.dispatchEvent(clickEvent);
       break;
+    case "Escape":
     case "Delete":
-      clear.dispatchEvent(new Event("click"));
+      clear.dispatchEvent(clickEvent);
       break;
     case "Enter":
     case "=":
-      equal.dispatchEvent(new Event("click"));
+      equal.dispatchEvent(clickEvent);
       break;
   }
 });
